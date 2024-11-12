@@ -1,0 +1,190 @@
+#nav
+{
+    display: flex;
+    background-color: aliceblue;
+    margin: 0px;
+    height: 60px;
+    width: 100vw;
+    align-items: center;
+    position: sticky;
+    top:0px;
+    z-index: 4;
+    box-shadow: 0 2px 15px black;
+    clip-path: inset(0px 0px -20px 0px);
+}
+
+.navTitle0,.navTitle1
+{
+    margin-left: 10px;
+}
+
+.navTitle0 > h1
+{
+    margin: 0px;
+}
+
+.navTitle0 > a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.navBody0
+{
+    display: flex;
+    flex-grow: 1;
+}
+
+.navLink0
+{
+    margin-left: auto;
+}
+.navLink0 > a
+{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
+.navButtons0
+{
+    margin-left: auto;
+    width: max-content;
+}
+
+.navButtons0 > a
+{
+    padding: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: rgb(0,149,255);
+    font-weight: 800;
+    border: 1px solid rgb(0,149,255);
+    box-shadow: 0px 1px 5px rgb(0,149,255);
+}
+
+.navButtons0 > a:hover
+{
+    box-shadow: 0px 0px 1px rgb(0,149,255);
+    transform: translateY(4px);
+}
+
+.navTitle1 > h1
+{
+    margin: 0px;
+}
+
+.navTitle1 > a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.navBody1
+{
+    display: flex;
+    flex-grow: 1;
+}
+
+.navLink1
+{
+    margin-left: auto;
+}
+.navLink1 > a
+{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
+.navButtons1
+{
+    margin-left: auto;
+    width: max-content;
+}
+
+.navButtons1 > a
+{
+    padding: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: rgb(0,149,255);
+    border: 1px solid rgb(0,149,255);
+    box-shadow: 0px 1px 5px rgb(0,149,255);
+}
+
+.navButtons1 > a:hover
+{
+    box-shadow: 0px 0px 1px rgb(0,149,255);
+    transform: translateY(4px);
+}
+
+
+
+
+.link{
+    position: relative;
+  }
+
+.link:after{
+    content: '';
+    position: absolute;
+    width: 0; height: 3px;
+    display: block;
+    margin-top: 5px;
+    right:0;
+    background: rgb(0,149,255);
+    transition: width .2s ease;
+  }
+   
+  .link:hover:after{
+    width: 100%;
+    left: 0;
+    background: rgb(0,149,255);
+  }
+  
+
+@media only screen and (max-width:600px)
+{
+    nav
+    {
+        font-size:small;
+    }
+
+    .navLink1 > a ,.navLink0 > a
+    {
+        margin: 3px;
+        padding: 5px;
+    }
+
+    .navButtons0 > a , .navButtons1
+    {
+        margin-right: 5px;
+        padding:5px;
+    }
+
+}
+
+@media only screen and (max-width:500px)
+{
+
+    .navLink1 > a ,.navLink0 > a
+    {
+        margin: 3px;
+        padding: 3px;
+    }
+
+    .navButtons0 > a , .navButtons1
+    {
+        margin-right: 5px;
+        padding:3px;
+    }
+
+    #hideSmallScreen
+    {
+        display: none;
+    }
+
+}

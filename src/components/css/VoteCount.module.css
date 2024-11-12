@@ -1,0 +1,50 @@
+#content
+{
+    text-align: center;
+    background-color: white;
+    position: relative;
+    background-color: aliceblue;
+    padding-top: 100px;
+    min-height: 100vh;
+    margin-bottom: 0px;
+  }
+
+
+
+.circleLoader {
+    margin-top: 8px;
+  margin-left: 10px;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-left-color: rgb(0,149,255);
+  animation: loaderSpin 1.2s infinite linear;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.loadComplete {
+  -webkit-animation: none;
+  animation: none;
+  border-color: rgb(0,149,255);
+  transition: border 500ms ease-out;
+}
+
+
+@keyframes loaderSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+candidateImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}

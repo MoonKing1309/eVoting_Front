@@ -1,0 +1,10 @@
+#container
+{
+    text-align: center;
+    background-color: white;
+    position: relative;
+    background-color: aliceblue;
+    padding-top: 100px;
+    min-height: 100vh;
+    margin-bottom: 0px;
+  }

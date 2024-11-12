@@ -1,0 +1,10 @@
+5. College Voting System
+The main activities in the application are the user login page for user. The other modules
+are followed by this login page. This module records only user and password of the user.
+Another main function of our proposed system is registration, in order to register with the
+OTP. Admin will update the candidate details with voter id, date and ward of election
+going to participate. Admin will create voter id list database and import by means of xls
+or manual form post method in the android app and view the details of voter. This voter id
+will act as the login id for the user side. While user login to the app, need to verify the
+OTP to their mobile number registered with voter id. User can select the candidate listed
+within the ward and submit the vote. Finally display the no of votes for each candidate.

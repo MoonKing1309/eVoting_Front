@@ -1,0 +1,109 @@
+#container
+{
+    text-align: center;
+    background-color: white;
+    position: relative;
+    background-color: aliceblue;
+    padding-top: 100px;
+    min-height: 100vh;
+    margin-bottom: 0px;
+  }
+
+#gridBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "viewVoter viewCandidate viewElections"
+    "addVoter addCandidate addElections";
+    gap:10px;
+    height: 70vh;
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
+#viewVoter{
+    grid-area: viewVoter;
+    max-height: 329px;
+    overflow-y: scroll;
+}
+#addVoter{
+    grid-area: addVoter;
+}
+#viewCandidate{
+    grid-area: viewCandidate;
+    max-height: 329px;
+    overflow-y: scroll;
+}
+#addCandidate{
+    grid-area: addCandidate;
+}
+
+#addElections{
+    grid-area: addElections;
+}
+
+#viewElections{
+    grid-area: viewElections;
+    max-height: 329px;
+    overflow-y: scroll;
+}
+
+
+
+.circleLoader {
+    margin-top: 8px;
+  margin-left: 10px;
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-left-color: rgb(0,149,255);
+  animation: loaderSpin 1.2s infinite linear;
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.loadComplete {
+  -webkit-animation: none;
+  animation: none;
+  border-color: rgb(0,149,255);
+  transition: border 500ms ease-out;
+}
+
+
+@keyframes loaderSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.viewTable
+{
+    margin:auto auto;
+    border-collapse: collapse;
+   
+}
+
+.viewTable th
+{
+    background-color: rgb(0,149,255);
+
+    
+}
+
+.viewTable tr
+{
+    background-color: white;
+    
+}
+
+.viewTable td
+{
+    border:2px solid rgb(0,149,255)
+}
