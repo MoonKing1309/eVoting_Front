@@ -5,7 +5,8 @@
     position: relative;
     background-color: aliceblue;
     padding-top: 100px;
-    min-height: 80vh;
+    padding-bottom: 200px;
+    min-height: 120vh;
     margin-bottom: 0px;
   }
 
@@ -24,16 +25,28 @@
 
 #viewVoter{
     grid-area: viewVoter;
+    height: 500px;
+    overflow-y: scroll;
     
-    
+    th{
+        position:sticky;
+        top:0;
+        z-index:1;
+    }
 }
 #addVoter{
     grid-area: addVoter;
 }
 #viewCandidate{
     grid-area: viewCandidate;
+    height: 500px;
+    overflow-y: auto;
     
-    
+    th{
+        position:sticky;
+        top:0;
+        z-index:1;
+    }
 }
 #addCandidate{
     grid-area: addCandidate;
@@ -45,15 +58,18 @@
 
 #viewElections{
     grid-area: viewElections;
-    
+    height: 500px;
+    overflow-y: auto;
+
+
+    th{
+        position:sticky;
+        top:0;
+        z-index:1;
+    }
     
 }
 
-tbody{
-    max-height: 329px;
-    overflow-y: scroll;
-
-}
 
 
 

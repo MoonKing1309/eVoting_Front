@@ -34,11 +34,11 @@ export default function Vote(){
     return(
         <div id={style.content}>
             {candidates.map((can,ind)=>
-                <div key={ind} className={style.card} style={{backgroundImage:`${can.candidateImg}`,backgroundClip:'cover'}}>
+                <div key={ind} className={style.card} >
                     <div className={style.cardTitle}>
                         {can.candidateName}
-                        <img src={`${can.candidateImg}`} className={style.cardImg}></img>
                     </div>
+                    <img src={`${can.candidateImg}`} className={style.cardImg}></img>
                     <div className={style.cardButton}>
                         <button onClick={()=>{
                             let notAllowedToVote = document.getElementById('notAllowedToVote');

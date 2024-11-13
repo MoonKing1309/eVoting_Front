@@ -24,10 +24,11 @@ export default function VoteCount() {
             </div>
         )
     }
+    console.log(voteCounts)
 
 
     return (
-        <div className={style.content}>
+        <div id={style.content}>
             <h2>Election Results for Election ID: {electionID}</h2>
             <table className={style.resultsTable}>
                 <thead>
@@ -43,7 +44,7 @@ export default function VoteCount() {
                         <tr key={can.candidateID}>
                             <td>{can.candidateID}</td>
                             <td>{can.candidateName}</td>
-                            <td><img src={can.candidateImg} style={style.candidateImage}/></td>
+                            <td><img src={can.candidateImg} className={style.candidateImage}/></td>
                             <td>{can.votes}</td>
                         </tr>
                     ))}

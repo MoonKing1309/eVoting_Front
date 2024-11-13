@@ -44,10 +44,18 @@
 
 
 .card{
-    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 20px;
+
 }
 
-.cardImg{
-    width:250px;
-    height:200px;
+.cardButton{
+    margin: 10px;
 }

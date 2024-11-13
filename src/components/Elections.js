@@ -44,7 +44,6 @@ export default function Elections(){
         <div id={style.content}>
             {elections.map((val,ind)=>
                 <div key={ind} className={style.card}>
-                    <img className={style.cardImg} src={`${val.electionImg}`} alt="Loading Image"></img>
                     <div className={style.cardTitle}>
                         {val.electionName}
                     </div>

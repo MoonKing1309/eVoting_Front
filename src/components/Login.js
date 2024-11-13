@@ -137,6 +137,7 @@ export default function Login() {
 
                     </table>
                 </form>
+                <h6 style={{textAlign:'center'}}>If it is your first time here, the default password is 'password'</h6>
             </div>
 
 

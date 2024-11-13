@@ -84,7 +84,34 @@ export default function Admin() {
         })
     }
 
-    console.log(voter,candidate,election)
+
+    const handleVoterUpload = async(event)=>{
+        event.preventDefault()
+        let voterError = document.getElementById('voterError')
+        let voterAdded = document.getElementById('voterAdded')
+
+        voterAdded.style.display = 'none'
+        voterError.style.display = 'none'
+        const excelFile = document.getElementById('voterUpload');
+        if (!excelFile.files[0]) {
+            alert('NO FILE SELECTED!');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('file', excelFile.files[0]);
+        try {
+            await axios.post('http://localhost:5001/registerVoters', formData,{headers: {'Content-Type': 'multipart/form-data',}}).then(() => {
+                voterAdded.style.display = 'block'
+                voterError.style.display = 'none'
+            }).catch(() => {
+                voterError.style.display = 'block'
+                voterAdded.style.display = 'none'
+            })
+        } catch (error) {
+            console.error(error);
+        }
+    }
     return (
 
         <div id={style.container}>
@@ -168,7 +195,12 @@ export default function Admin() {
                                 </tr>
                                 <tr>
                                     <td colSpan={2}><button onClick={handleVoterSubmit}>Add Voter</button></td>
-
+                                </tr>
+                                <tr>
+                                    <td colSpan={2}><input type="file" accept=".xlsx" id="voterUpload"/></td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={2}><button onClick={handleVoterUpload}>Upload Voters</button></td>
                                 </tr>
                             </tbody>
                         </table>
