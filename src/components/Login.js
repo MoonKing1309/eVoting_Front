@@ -63,7 +63,7 @@ export default function Login() {
         else {
             circleLoader.style.display = 'inline-block'
             try {
-                await axios.post(`http://localhost:5001/login`, { voterID, pwd , phno })
+                await axios.post(`https://evoting-back.onrender.com/login`, { voterID, pwd , phno })
                     .then((res) => {
                         if (res.status == 201) {
                             navigate(`/verify/${voterID}`)
