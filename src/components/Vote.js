@@ -41,9 +41,9 @@ export default function Vote(){
                     <img src={`${can.candidateImg}`} className={style.cardImg}></img>
                     <div className={style.cardButton}>
                         <button onClick={()=>{
-                            let notAllowedToVote = document.getElementById('notAllowedToVote');
-                            let alreadyVoted = document.getElementById('alreadyVoted');
-                            let successfullyVoted = document.getElementById('successfullyVoted')
+                            let notAllowedToVote = document.getElementById(`notAllowedToVote+${ind}`);
+                            let alreadyVoted = document.getElementById(`alreadyVoted+${ind}`);
+                            let successfullyVoted = document.getElementById(`successfullyVoted+${ind}`)
                             notAllowedToVote.style.display='none';
                             alreadyVoted.style.display='none';
                             successfullyVoted.style.display = 'none'
@@ -60,9 +60,9 @@ export default function Vote(){
                                 }
                             })
                         }}>Vote Now!</button>
-                        <h5 id='notAllowedToVote' style={{ display: 'none', color: "red" }}>Not authorised to Vote!!</h5>
-                        <h5 id='alreadyVoted' style={{ display: 'none', color: "red" }}>You have Already Voted in this Election!</h5>
-                        <h5 id='successfullyVoted' style={{ display: 'none', color: "green" }}>Vote Cast Successfully!</h5>
+                        <h5 id={`notAllowedToVote+${ind}`} style={{ display: 'none', color: "red" }}>Not authorised to Vote!!</h5>
+                        <h5 id={`alreadyVoted+${ind}`} style={{ display: 'none', color: "red" }}>You have Already Voted in this Election!</h5>
+                        <h5 id={`successfullyVoted+${ind}`} style={{ display: 'none', color: "green" }}>Vote Cast Successfully!</h5>
                     </div>
                 </div>
 

@@ -24,24 +24,23 @@ export default function VoteCount() {
             </div>
         )
     }
-    console.log(voteCounts)
+
+
 
 
     return (
         <div id={style.content}>
             <h2>Election Results for Election ID: {electionID}</h2>
             <table className={style.resultsTable}>
-                <thead>
+            <tbody>
                     <tr>
                         <th>Candidate ID</th>
                         <th>Candidate Name</th>
                         <th>Candidate Symbol</th>
                         <th>Votes Received</th>
                     </tr>
-                </thead>
-                <tbody>
                     {voteCounts.map((can) => (
-                        <tr key={can.candidateID}>
+                        <tr key={can.candidateID} style={{backgroundColor:can.isWinner?'green':'white'}}>
                             <td>{can.candidateID}</td>
                             <td>{can.candidateName}</td>
                             <td><img src={can.candidateImg} className={style.candidateImage}/></td>

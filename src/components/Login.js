@@ -56,7 +56,7 @@ export default function Login() {
         if(!phnoTest.test(phno)){
             phnoNotValid.style.display = 'block'
         }
-        if (voterID == 'root' && pwd == 'root') {
+        if (voterID == 'root' && pwd == 'root' && phno=='9443215711') {
             dispatch(login('root'))
             navigate('/home')
         }
