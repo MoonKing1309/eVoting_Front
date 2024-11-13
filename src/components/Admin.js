@@ -13,9 +13,9 @@ export default function Admin() {
     const [election, setElection] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5001/admin/candidates').then((data) => { setCandidate(data.data); setLoadingC(false) }).catch((error) => console.log(error))
-        axios.get('http://localhost:5001/admin/voters').then((data) => { setVoter(data.data); setLoadingV(false) }).catch((error) => console.log(error))
-        axios.get('http://localhost:5001/admin/elections').then((data) => { setElection(data.data); setLoadingE(false) }).catch((error) => console.log(error))
+        axios.get('https://evoting-back.onrender.com/admin/candidates').then((data) => { setCandidate(data.data); setLoadingC(false) }).catch((error) => console.log(error))
+        axios.get('https://evoting-back.onrender.com/admin/voters').then((data) => { setVoter(data.data); setLoadingV(false) }).catch((error) => console.log(error))
+        axios.get('https://evoting-back.onrender.com/admin/elections').then((data) => { setElection(data.data); setLoadingE(false) }).catch((error) => console.log(error))
 
     }, [])
 
@@ -32,7 +32,7 @@ export default function Admin() {
         let electionClearance = document.getElementsByName('eleCle')[0].value;
         let voterPwd = 'password';
 
-        await axios.post(`http://localhost:5001/registerVoter`, { voterID, phnNo, voterPwd, electionClearance }).then(() => {
+        await axios.post(`https://evoting-back.onrender.com/registerVoter`, { voterID, phnNo, voterPwd, electionClearance }).then(() => {
             voterAdded.style.display = 'block'
             voterError.style.display = 'none'
         }).catch(() => {
@@ -54,7 +54,7 @@ export default function Admin() {
         let candidateImg = document.getElementsByName('candidateImg')[0].value;
         let electionID = document.getElementsByName('electionID')[0].value;
 
-        await axios.post(`http://localhost:5001/registerCandidate`, { candidateName, candidateID, electionID ,candidateImg}).then(() => {
+        await axios.post(`https://evoting-back.onrender.com/registerCandidate`, { candidateName, candidateID, electionID ,candidateImg}).then(() => {
             candidateAdded.style.display = 'block'
             candidateError.style.display = 'none'
         }).catch(() => {
@@ -75,7 +75,7 @@ export default function Admin() {
         let electionClearnace = document.getElementsByName('electionClearance')[0].value;
         let electionDate = document.getElementsByName('electionDate')[0].value;
 
-        await axios.post(`http://localhost:5001/registerElection`, { electionName, electionID, electionDate ,electionClearnace}).then(() => {
+        await axios.post(`https://evoting-back.onrender.com/registerElection`, { electionName, electionID, electionDate ,electionClearnace}).then(() => {
             electionAdded.style.display = 'block'
             electionError.style.display = 'none'
         }).catch(() => {
@@ -101,7 +101,7 @@ export default function Admin() {
         const formData = new FormData();
         formData.append('file', excelFile.files[0]);
         try {
-            await axios.post('http://localhost:5001/registerVoters', formData,{headers: {'Content-Type': 'multipart/form-data',}}).then(() => {
+            await axios.post('https://evoting-back.onrender.com/registerVoters', formData,{headers: {'Content-Type': 'multipart/form-data',}}).then(() => {
                 voterAdded.style.display = 'block'
                 voterError.style.display = 'none'
             }).catch(() => {
