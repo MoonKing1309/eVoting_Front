@@ -12,7 +12,7 @@ function OTP(){
     const navigate = useNavigate();
 
     useEffect(()=>{
-        axios.get(`http://localhost:5001/login/${voterID}`).then((temp)=>{
+        axios.get(`https://evoting-back.onrender.com/login/${voterID}`).then((temp)=>{
             console.log("OTP has been generatee")
         })
     },[])
@@ -49,7 +49,7 @@ function OTP(){
                 
         }
         console.log(finalOtp)
-        await axios.post(`http://localhost:5001/login/${voterID}`,{finalOtp}).then((temp)=>{
+        await axios.post(`https://evoting-back.onrender.com/login/${voterID}`,{finalOtp}).then((temp)=>{
 
             if(temp.status==200){
                 dispatch(login(voterID))
