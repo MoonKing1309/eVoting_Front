@@ -14,7 +14,7 @@ export default function Vote(){
     const [candidates,setCandidates] = useState(false)
 
     useEffect(()=>{
-        axios.get(`http://localhost:5001/elections/${loginID}/${electionID}`)
+        axios.get(`https://evoting-back.onrender.com/elections/${loginID}/${electionID}`)
         .then((data)=>{
             console.log(data.data.msg)
             setCandidates(data.data.msg);
@@ -47,7 +47,7 @@ export default function Vote(){
                             notAllowedToVote.style.display='none';
                             alreadyVoted.style.display='none';
                             successfullyVoted.style.display = 'none'
-                            axios.post(`http://localhost:5001/elections/${loginID}/${electionID}`,{candidateID:can.candidateID}).then((res)=>{
+                            axios.post(`https://evoting-back.onrender.com/elections/${loginID}/${electionID}`,{candidateID:can.candidateID}).then((res)=>{
                                 if(res.status==200){
                                     successfullyVoted.style.display = 'block'
                                 }
