@@ -84,8 +84,9 @@ export default function Admin() {
         })
     }
 
-
+    console.log(voter,candidate,election)
     return (
+
         <div id={style.container}>
             <div id={style.gridBox}>
                 <div id={style.viewVoter}>
@@ -97,7 +98,7 @@ export default function Admin() {
                                 <th>Phone Number</th>
                                 <th>Election Clearance</th>
                             </tr>
-                            {loadingV ? <div className={style.circleLoader}></div> : voter.map((voter, index) => (
+                            {loadingV ? <div className={style.circleLoader}></div> : (voter.length===0)?(<tr> <td colSpan={4} style={{margin:'auto'}}>No data</td></tr>): voter.map((voter, index) => (
                                 <tr key={index}>
                                     <td>{index}</td>
                                     <td>{voter.voterID}</td>
@@ -118,7 +119,7 @@ export default function Admin() {
                                 <th>Candidate ID</th>
                                 <th>Election ID</th>
                             </tr>
-                            {loadingC ? <div className={style.circleLoader}></div> : candidate.map((can, index) => (
+                            {loadingC ? <div className={style.circleLoader}></div> : (candidate.length===0)?(<tr> <td colSpan={4} style={{margin:'auto'}}>No data</td></tr>):candidate.map((can, index) => (
                                 <tr key={index}>
                                     <td>{index}</td>
                                     <td>{can.candidateName}</td>
@@ -138,7 +139,7 @@ export default function Admin() {
                                 <th>Election ID</th>
                                 <th>Election Clearance</th>
                             </tr>
-                            {loadingE ? <div className={style.circleLoader}></div> : election.map((ele, index) => (
+                            {loadingE ? <div className={style.circleLoader}></div> : (election.length===0)?(<tr> <td colSpan={4} style={{margin:'auto'}}>No data</td></tr>):election.map((ele, index) => (
                                 <tr key={index}>
                                     <td>{index}</td>
                                     <td>{ele.electionID}</td>

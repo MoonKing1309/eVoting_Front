@@ -3,12 +3,19 @@ import { useParams,useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../features/auth/authSlice';
 import axios from 'axios'
+import { useEffect } from 'react';
 
 
 function OTP(){
     const { voterID } = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    useEffect(()=>{
+        axios.get(`http://localhost:5001/login/${voterID}`).then((temp)=>{
+            console.log("OTP has been generatee")
+        })
+    },[])
 
     const handleInputChange = (index, e) => {
 
@@ -32,19 +39,25 @@ function OTP(){
         }
       };
 
-      const handleOTPSubmit = async ()=>{
+      const handleOTPSubmit = async (event)=>{
+        event.preventDefault();
+        let otpNotMatch = document.getElementById('otpNotMatch')
+        otpNotMatch.style.display='none'
         let finalOtp = '';
-        await axios.get(`http://localhost:5001/login/${voterID}`).then((temp)=>{
-            
-            for(let i =0;i<6;i++){
-                finalOtp = finalOtp+ document.getElementsByName(`${i}`)[0]
+        for(let i =0;i<6;i++){
+                finalOtp = finalOtp+ document.getElementsByName(`${i}`)[0].value
                 
-            }
-            console.log(finalOtp)
-        })
+        }
+        console.log(finalOtp)
         await axios.post(`http://localhost:5001/login/${voterID}`,{finalOtp}).then((temp)=>{
-            dispatch(login(voterID))
-            navigate('/home')
+
+            if(temp.status==200){
+                dispatch(login(voterID))
+                navigate('/home')
+            }
+            else{
+                otpNotMatch.style.display='block'
+            }
         })
 
       }
@@ -69,10 +82,10 @@ function OTP(){
                                     className={style.otpInput}
                                     />))}
                                 </td>
-                                
+                                <h5 id='otpNotMatch' style={{ display: 'none', color: "red" }}>Incorrect OTP</h5>
                             </tr>
                             <tr>
-                                <td colSpan={2}><button id={style.loginButton} type="submit" to="" onClick={handleOTPSubmit}>Login</button></td>
+                                <td colSpan={2}><button id={style.loginButton} type="submit"  onClick={handleOTPSubmit}>Login</button></td>
                             </tr>
                             {/* <tr>
                             <td colSpan={2} ><button id={style.linkButton}>Resend OTP</button></td>

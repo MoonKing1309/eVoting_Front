@@ -2,17 +2,20 @@ import { useEffect ,useState} from 'react';
 import style from './css/Account.module.css'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
+import {useNavigate} from 'react-router-dom';
 
 function Account() {
     const dispatch = useDispatch();
     const loginID = useSelector((state) => state.auth.loginID);
+
+    const navigate = useNavigate()
 
     const [loading,setLoading] = useState(true)
     const [data,setData] = useState({})
     useEffect(()=>{
         axios.get(`http://localhost:5001/account/${loginID}`)
         .then((data)=>{
-            setData(data.data)
+            setData(data.data.msg)
             setLoading(false)
 
         })
@@ -22,9 +25,10 @@ function Account() {
     },[])
 
     if (loading) return (  <div className={style.circleLoader}></div>)
+        console.log(data)
     return (
         <div id={style.container}>
-            <table>
+            <table style={{margin:'auto'}}>
                 <tbody>
                     <tr>
                         <td>
@@ -48,12 +52,22 @@ function Account() {
                         </td>
                         <td>
                             <input id='pwd' placeholder='Enter New Password'></input>
+                            <p></p>
                             <input id='cpwd' placeholder='Confirm Password'></input>
                         </td>
                     </tr>
+                    <tr>
+                        <td colSpan={2}> <button onClick={
+                            ()=>{
+                                axios.put(`http://localhost:5001/account/${loginID}`,{newPwd:document.getElementById('pwd').value}).then(()=>{
+                                    navigate('/home')
+                                })
+                            }
+                        }>Update</button> </td>
+                    </tr>
                 </tbody>
             </table>
-        </div>
+            </div>
     )
 }
 

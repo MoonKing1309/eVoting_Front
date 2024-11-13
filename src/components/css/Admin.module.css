@@ -5,7 +5,7 @@
     position: relative;
     background-color: aliceblue;
     padding-top: 100px;
-    min-height: 100vh;
+    min-height: 80vh;
     margin-bottom: 0px;
   }
 
@@ -24,16 +24,16 @@
 
 #viewVoter{
     grid-area: viewVoter;
-    max-height: 329px;
-    overflow-y: scroll;
+    
+    
 }
 #addVoter{
     grid-area: addVoter;
 }
 #viewCandidate{
     grid-area: viewCandidate;
-    max-height: 329px;
-    overflow-y: scroll;
+    
+    
 }
 #addCandidate{
     grid-area: addCandidate;
@@ -45,8 +45,14 @@
 
 #viewElections{
     grid-area: viewElections;
+    
+    
+}
+
+tbody{
     max-height: 329px;
     overflow-y: scroll;
+
 }
 
 

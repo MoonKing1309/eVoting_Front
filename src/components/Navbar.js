@@ -22,8 +22,8 @@ function Navbar()
             <div className={style.navBody0}>
                 <div className={style.navLink0}>
                     <Link to='/' className={style.link} id={style.hideSmallScreen}>Home</Link>
-                    <Link to='/vote' className={style.link}>Vote</Link>
-                    <Link to='/results' className={style.link}>Results</Link>
+                    <Link to='/login' className={style.link}>Elections</Link>
+                    <Link to='/login' className={style.link}>Results</Link>
                 </div>
                 <div className={style.navButtons0}>
                     <Link to='/signup'>Sign-Up</Link> 
@@ -60,9 +60,9 @@ function Navbar()
             <div className={style.navBody1}>
                 <div className={style.navLink1}>
                     <Link to='/' className={style.link} id={style.hideSmallScreen}>Home</Link>
-                    <Link to='/vote' className={style.link}>Vote</Link>
+                    <Link to='/elections' className={style.link}>Elections</Link>
                     <Link to='/results' className={style.link}>Results</Link>
-                    <Link to='/account' className={style.link}>My Account</Link>
+                    <Link to={`/account/${loginID}`} pa className={style.link}>My Account</Link>
                 </div>
                 <div className={style.navButtons1}>
                     <Link to='/home' onClick={handleLogOut}>Log-Out</Link>

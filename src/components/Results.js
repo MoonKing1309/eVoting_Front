@@ -11,7 +11,7 @@ export default function Results(){
     const navigate = useNavigate();
 
     useEffect(() => {
-       axios.get('http://localhost:5001/completedElections')
+       axios.get('http://localhost:5001/results')
        .then((temp)=>{
            setResults(temp.data);
            setLoading(false);
@@ -31,9 +31,8 @@ export default function Results(){
     }
 
     return (
-        <div className={style.content}>
+        <div id={style.content}>
             <input type="text" placeholder="Search by Election ID" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className={style.searchBar}/>
-            
             {filteredElections.length === 0 ? (
                 <p>No completed elections to display.</p>
             ) : (
