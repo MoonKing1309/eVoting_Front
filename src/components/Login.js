@@ -39,7 +39,6 @@ export default function Login() {
         phnoReq.style.display = 'none'
 
         let phnoTest = /^\d{10}$/;
-        console.log(phno,typeOf(phno))
 
         if (!voterID) {
             voterIDReq.style.display = 'block'
