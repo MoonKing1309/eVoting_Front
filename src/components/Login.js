@@ -6,7 +6,7 @@ import eyeShow from '../img/eyeShow16.png'
 import eyeHide from '../img/eyeHide16.png'
 import { useState } from "react";
 import { useLocation, useParams,useNavigate} from 'react-router-dom';
-import { typeOf } from 'mathjs';
+
 
 
 export default function Login() {
