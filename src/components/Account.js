@@ -13,7 +13,7 @@ function Account() {
     const [loading,setLoading] = useState(true)
     const [data,setData] = useState({})
     useEffect(()=>{
-        axios.get(`http://localhost:5001/account/${loginID}`)
+        axios.get(`https://evoting-back.onrender.com/account/${loginID}`)
         .then((data)=>{
             setData(data.data.msg)
             setLoading(false)
@@ -59,7 +59,7 @@ function Account() {
                     <tr>
                         <td colSpan={2}> <button onClick={
                             ()=>{
-                                axios.put(`http://localhost:5001/account/${loginID}`,{newPwd:document.getElementById('pwd').value}).then(()=>{
+                                axios.put(`https://evoting-back.onrender.com/account/${loginID}`,{newPwd:document.getElementById('pwd').value}).then(()=>{
                                     navigate('/home')
                                 })
                             }
