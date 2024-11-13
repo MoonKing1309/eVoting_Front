@@ -11,7 +11,7 @@ export default function Results(){
     const navigate = useNavigate();
 
     useEffect(() => {
-       axios.get('http://localhost:5001/results')
+       axios.get('https://evoting-back.onrender.com/results')
        .then((temp)=>{
            setResults(temp.data);
            setLoading(false);
