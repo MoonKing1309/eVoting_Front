@@ -13,7 +13,7 @@ export default function Elections(){
     const loginID = useSelector((state) => state.auth.loginID);
 
     useEffect(()=>{
-        axios.get(`http://localhost:5001/elections/${loginID}`)
+        axios.get(`https://evoting-back.onrender.com/elections/${loginID}`)
         .then((data)=>{
             if(data.status==202){
                 setEmpty(true)
