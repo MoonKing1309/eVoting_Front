@@ -9,7 +9,7 @@ export default function VoteCount() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/results/${electionID}`)
+        axios.get(`https://evoting-back.onrender.com/results/${electionID}`)
             .then((temp) => {
                 setVoteCounts(temp.data);
                 setLoading(false);
