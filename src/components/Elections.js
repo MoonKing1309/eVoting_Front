@@ -19,7 +19,7 @@ export default function Elections(){
                 setEmpty(true)
             }
             else{
-                setElections(data.data)
+                setElections(data.data.msg)
                 setLoading(false)
             }
         })
@@ -35,26 +35,28 @@ export default function Elections(){
     )
 
     if(loading) return (
-        <div id={style.content}>
+        <div id={style.content}> 
             <div className={style.circleLoader}></div>
         </div>
     )
+    console.log(elections)
     return(
         <div id={style.content}>
-            {elections.map((val,ind)=>{
+            {elections.map((val,ind)=>
                 <div key={ind} className={style.card}>
+                    <img className={style.cardImg} src={`${val.electionImg}`} alt="Loading Image"></img>
                     <div className={style.cardTitle}>
                         {val.electionName}
                     </div>
                     <div className={style.cardDetails}>
-                        {val.electionDetails}
+                        {new Date(val.electionDate).toLocaleDateString()}
                     </div>
                     <div className={style.cardButton}>
                         <button onClick={()=>navigate(`${val.electionID}`)}>Vote Now!</button>
                     </div>
                 </div>
 
-            })}
+            )}
         </div>
     )
 

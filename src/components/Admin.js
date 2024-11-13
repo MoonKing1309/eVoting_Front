@@ -221,7 +221,7 @@ export default function Admin() {
                                 </tr>
                                 <tr>
                                     <td><label>Election Date</label></td>
-                                    <td><input name='electionDate' type='text'></input></td>
+                                    <td><input name='electionDate' type='date'></input></td>
                                 </tr>
                                 <tr>
                                     <td><label>Election Clearance</label></td>
