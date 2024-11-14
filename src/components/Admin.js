@@ -75,6 +75,7 @@ export default function Admin() {
         let electionClearance = document.getElementsByName('electionClearance')[0].value;
         let electionDate = document.getElementsByName('electionDate')[0].value;
 
+        console.log(electionName,electionID,electionDate,electionClearance)
         await axios.post(`https://evoting-back.onrender.com/registerElection`, { electionName, electionID, electionDate ,electionClearance}).then(() => {
             electionAdded.style.display = 'block'
             electionError.style.display = 'none'
