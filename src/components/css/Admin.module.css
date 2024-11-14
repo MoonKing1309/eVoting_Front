@@ -18,7 +18,7 @@
     "viewVoter viewCandidate viewElections"
     "addVoter addCandidate addElections";
     gap:10px;
-    height: 70vh;
+    height: max-content;
     max-width: 80vw;
     margin: 0 auto;
 }
@@ -128,4 +128,24 @@
 .viewTable td
 {
     border:2px solid rgb(0,149,255)
+}
+
+@media only screen and (max-width:1000px){
+    #gridBox{
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "viewVoter"
+        "addVoter"
+        "viewCandidate"
+        "addCandidate"
+        "viewElections "
+        "addElections";
+        gap:10px;
+        height: max-content;
+        max-width: 80vw;
+        margin: 0 auto;
+    }
+    
 }
