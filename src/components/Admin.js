@@ -72,7 +72,7 @@ export default function Admin() {
 
         let electionName = document.getElementsByName('electionName')[0].value;
         let electionID = document.getElementsByName('electionID')[1].value;
-        let electionClearance = document.getElementsByName('electionClearance')[1].value;
+        let electionClearance = document.getElementsByName('electionClearance')[0].value;
         let electionDate = document.getElementsByName('electionDate')[0].value;
 
         await axios.post(`https://evoting-back.onrender.com/registerElection`, { electionName, electionID, electionDate ,electionClearance}).then(() => {
