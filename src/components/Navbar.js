@@ -26,7 +26,6 @@ function Navbar()
                     <Link to='/login' className={style.link}>Results</Link>
                 </div>
                 <div className={style.navButtons0}>
-                    <Link to='/signup'>Sign-Up</Link> 
                     <Link to='/login'>Log-In</Link>
                 </div>
             </div>
